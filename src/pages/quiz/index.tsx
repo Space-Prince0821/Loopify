@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { quiz } from "~/data";
+import { questions } from "~/data";
 
 export default function Quiz() {
   const [activeQuestion, setActiveQuestion] = useState(0);
@@ -13,8 +13,9 @@ export default function Quiz() {
     wrongAnswers: 0,
   });
 
-  const { questions } = quiz;
-  const { question, answers, correctAnswer } = questions[activeQuestion];
+  const question = questions[activeQuestion]?.question;
+  const answers = questions[activeQuestion]?.answers;
+  const correctAnswer = questions[activeQuestion]?.correctAnswer;
 
   return (
     <>
@@ -31,7 +32,7 @@ export default function Quiz() {
             {!showResult ? (
                 <div className="bg-white text-black px-20 py-2 rounded-lg pt-4 pb-4 flex flex-col gap-4">
                     <h3 className="text-2xl font-bold">{questions[activeQuestion]?.question}</h3>
-                    {answers.map((answer: Array<string>, idx: number) => (
+                    {answers?.map((answer, idx) => (
                         <li 
                             className="list-none border-2 border-gray-600 px-2 py-2 rounded-lg flex justify-center hover:bg-slate-200 cursor-pointer hover:border-black" 
                             key={idx}
