@@ -5,7 +5,7 @@ export default function Quiz() {
   const [activeQuestion, setActiveQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(false);
   const [checked, setChecked] = useState(false);
-  const [selectedAnswerIndex, setSelectedAnswerIndex] = useState(null);
+  const [selectedAnswerIndex, setSelectedAnswerIndex] = useState(-1);
   const [showResult, setShowResult] = useState(false);
   const [result, setResult] = useState({
     score: 0,
@@ -13,7 +13,6 @@ export default function Quiz() {
     wrongAnswers: 0,
   });
 
-  const question = questions[activeQuestion]?.question;
   const answers = questions[activeQuestion]?.answers;
   const correctAnswer = questions[activeQuestion]?.correctAnswer;
 
@@ -28,7 +27,7 @@ export default function Quiz() {
   };
 
   const nextQuestion = () => {
-    setSelectedAnswerIndex(null);
+    setSelectedAnswerIndex(-1);
     setResult((prev) => 
         selectedAnswer ?
         {
@@ -55,7 +54,7 @@ export default function Quiz() {
     setActiveQuestion(0);
     setSelectedAnswer(false);
     setChecked(false);
-    setSelectedAnswerIndex(null);
+    setSelectedAnswerIndex(-1);
     setShowResult(false);
     setResult({
         score: 0,
@@ -94,7 +93,7 @@ export default function Quiz() {
                             {activeQuestion === questions.length - 1 ? "Finish" : "Next"}
                         </button>
                     ) : (
-                        <button className="border-1 rounded-lg bg-green-200 px-2 py-2 disabled bg-gray-200 text-slate-400">
+                        <button className="border-1 rounded-lg bg-green-200 px-2 py-2 disabled bg-gray-300 text-slate-400">
                             {activeQuestion === questions.length - 1 ? "Finish" : "Next"}
                         </button>
                     )}
