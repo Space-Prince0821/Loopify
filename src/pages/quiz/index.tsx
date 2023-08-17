@@ -99,9 +99,13 @@ export default function Quiz() {
                     )}
                 </div>
             ) : (
-                <div className="border-1 bg-white text-black flex flex-col items-center justify-center px-4 py-4 rounded-lg w-48 h-48 gap-2 font-medium text-2xl">
+                <div className="border-1 bg-white text-black flex flex-col items-center justify-center px-4 py-4 rounded-lg gap-2 font-medium text-2xl overflow-visible">
                     <h3>Results</h3>
                     <h3>Overall: {Math.floor((result.score/15) * 100)}%</h3>
+                    {(Math.floor((result.score/15) * 100) >= 66) ? 
+                        <h2>You&apos;re a Wizard!</h2> :
+                        'You are a muggle...'
+                    }
                     <button onClick={startOver} className="font-normal mt-4 border-1 rounded-lg bg-green-400 px-4 py-2">Try Again</button>
                 </div>
             )}

@@ -1,20 +1,20 @@
 export const questions = [
     {
         id: 1,
-        question: "What is the capital of France?",
-        answers: ["Madrid", "Paris", "Rome", "Berlin"],
-        correctAnswer: 'Paris',
+        question: "What are the three deathly hallows?",
+        answers: ["Elder Wand, Resurrection Stone, Invisibility Cloak", "Marauder Map, Remembrall, Revealer", "Tom Riddle's Diary, Hufflepuff Cup, Nagini"],
+        correctAnswer: 'Elder Wand, Resurrection Stone, Invisibility Cloak',
     },
     {
         id: 2,
-        question: "What is the largest planet in our solar system?",
-        answers: ["Mars", "Jupiter", "Venus", "Saturn"],
-        correctAnswer: 'Jupiter',
+        question: "Who is the half blood Prince?",
+        answers: ["Harry Potter", "Ron Weasley", "Severus Snape"],
+        correctAnswer: 'Severus Snape',
     },
     {
         id: 3,
-        question: "What is the smallest country in the world?",
-        answers: ["Monaco", "Maldives", "Vatican City", "San Marino"],
-        correctAnswer: 'Vatican City',
+        question: "What is the name of Harry Potter's owl?",
+        answers: ["Marco", "Polo", "Hedwig"],
+        correctAnswer: 'Hedwig',
     }
 ]
